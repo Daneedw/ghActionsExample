@@ -15,7 +15,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "shielded-stream-29388"
           heroku_email: "daneedw@gmail.com"
-      -run: |
-          git remote add heroku git@heroku.com:shielded-stream-29388.git
-          git push heroku main
+      - name: "Build and push to heroku registry"
+        run: heroku container:push web --app shielded-stream-29388
           
